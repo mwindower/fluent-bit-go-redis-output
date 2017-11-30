@@ -1,6 +1,6 @@
 [[constraint]]
   branch = "master"
-  name = "github.com/fluent/fluent-bit-go"
+  name = "github.com/mwindower/fluent-bit-go"
 
 [[constraint]]
   name = "github.com/garyburd/redigo"

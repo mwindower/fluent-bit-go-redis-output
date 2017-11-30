@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/fluent/fluent-bit-go/output"
+	"github.com/mwindower/fluent-bit-go/output"
 )
 import (
 	"encoding/json"

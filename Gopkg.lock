@@ -20,6 +20,12 @@
   version = "v1.3.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/mwindower/fluent-bit-go"
+  packages = ["output"]
+  revision = "77a3f9c852e4805f83fb0865cc2ef6e9f097e795"
+
+[[projects]]
   name = "github.com/pmezard/go-difflib"
   packages = ["difflib"]
   revision = "792786c7400a136282c1664665ae0a8db921c6c2"
@@ -40,6 +46,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "934635ee7ed81a47cc048c794d88a70bc5086019aeb3c32781f89a8f480b10be"
+  inputs-digest = "00728922a67d46e39db4dea77c7c5acf26e1544c91be8532fea5e38f2a498032"
   solver-name = "gps-cdcl"
   solver-version = 1
