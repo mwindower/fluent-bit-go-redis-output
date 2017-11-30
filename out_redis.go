@@ -35,14 +35,14 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
 	// create a pool of redis connection pools
 	config, err := getRedisConfig(hosts, password, db, usetls, tlsskipverify, key)
 	if err != nil {
-		fmt.Printf("configuration errors: %v\n", err)
+		output.Errorf(ctx, "configuration errors: %v\n", err)
 		// FIXME use fluent-bit method to err in init
 		output.FLBPluginUnregister(ctx)
 		os.Exit(1)
 	}
 	redisPools, err := newPoolsFromConfig(config)
 	if err != nil {
-		fmt.Printf("cannot create a pool of redis connections: %v\n", err)
+		output.Errorf(ctx, "cannot create a pool of redis connections: %v\n", err)
 		output.FLBPluginUnregister(ctx)
 		os.Exit(1)
 	}
@@ -52,7 +52,7 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
 		key:   config.key,
 	}
 
-	fmt.Printf("[out-redis] redis connection to: %s\n", config)
+	output.Infof(ctx, "established connection to redis pool: %v\n", redisPools)
 	return output.FLB_OK
 }
 
